@@ -1,4 +1,4 @@
-<div class="max-w-dvw ">
+<div class="max-w-dvw overflow-auto ">
     <div class="w-full border-b border-[#696767]/50">
         <div class="w-[98%] flex justify-between items-center md:p-2">
             <div class="flex items-center w-[40%] md:w-[30%] ">
@@ -9,10 +9,10 @@
                 </div>
             </div>
             <div class="flex gap-2">
-                <button
+                <button [routerLink]="'/signUp'"
                     class="cursor-pointer hover:bg-[#99605b] hover:text-[#fefefe] text-[12px] lg:text-[14px] px-4 py-1 lg:py-2 rounded-[5px] text-[#99605b] border border-[#99605b]">ثبت
                     نام</button>
-                <button
+                <button [routerLink]="'/login'"
                     class="cursor-pointer hover:bg-[#99605b] hover:text-[#fefefe] text-[12px] lg:text-[14px]  px-6 lg:py-2 py-1 rounded-[5px] text-[#99605b] border border-[#99605b]">ورود</button>
             </div>
         </div>
@@ -45,7 +45,7 @@
             </div>
             <div class="order-1 md:order-2 flex justify-center w-full">
                 <img src="img/home/baberShop_home.webp" alt="baberShop"
-                    class=" md:rounded-t-[100px] md:rounded-b-[25px] w-[100%] lg:h-112.5 p-1 ">
+                    class=" lg:rounded-t-[100px] lg:rounded-b-[25px] w-[100%] lg:h-112.5 p-1 ">
             </div>
             <!-- <div>
             <img src="img/home/baberShop_home.webp" alt="baberShop">

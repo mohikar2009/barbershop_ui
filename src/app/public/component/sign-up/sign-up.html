@@ -1,0 +1,245 @@
+<p-toast position="top-left"></p-toast>
+<div class="max-w-dvw  min-h-dvh relative ">
+    <img src="img/publicImage/bg_page.jpg" alt="header_img" class="h-full w-full   absolute object-cover top-0 left-0 z-[-5]">
+    <div class="block absolute inset-0
+            bg-[rgba(0,0,0,0.05)] w-full h-full
+             z-10"></div>
+    <div class=" w-full flex flex-col items-center p-5 relative top-0 left-0 z-100">
+        <div class=" bg-white/70 backdrop-blur-lg p-3 lg:p-10  rounded-[5px]
+           
+            shadow-[0_20px_70px_rgba(60,30,35,0.25)] border border-white/40  w-[95%] ">
+            <!-- /////////////////////////////////////// -->
+            <div class=" w-full flex flex-col items-center gap-2 relative">
+                <h2 class="text-md lg:text-2xl text-[#1e1e1d] ">ثبت نام</h2>
+
+
+                <div class="flex items-center justify-center gap-1 w-[50%]">
+                    <div class="h-0.5 w-[20%] lg:w-[5%] bg-[#a35554] rounded-[5px]"></div>
+                    <div class=" w-2 h-2 bg-[#a35554] rounded-[50%]"></div>
+                    <div class="h-0.5 w-[20%] lg:w-[5%] bg-[#a35554] rounded-[5px]"></div>
+                </div>
+                <p class="text-[#878687] text-[10px] lg:text-[12px]">لطفا اطلاعات خود را وارد کنید</p>
+            </div>
+            <!-- ////////////////////////////////////////////////////////////// -->
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full   p-6  flex flex-col items-center ">
+                <div class="w-full flex flex-col gap-3 lg:grid lg:grid-cols-2">
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">نام:<span
+                                class="text-red-500">*</span></label>
+                        <div class="focus-within:border-[#a35554] border  rounded-[5px] p-3 flex gap-2 items-center mt-1" [ngClass]="
+  form.get('name')?.invalid && form.get('name')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'
+">
+                            <i class="fa-solid fa-user text-[#8d8585] text-[13px] lg:text-[18px]"></i>
+                            <input type="text" placeholder="نام خود را وارد کنید"
+                                class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px] w-full"
+                                formControlName="name">
+                        </div>
+                        <div>
+                            @if (form.get('name')?.invalid && form.get('name')?.touched) {
+                            @if(form.get('name')?.hasError('required')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فیلد اجباری است</p>
+                            }
+                            @else if(form.get('name')?.hasError('minlength')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">نام باید حداقل 3 کاراکتر باشد</p>
+                            }
+                            @else if(form.get('name')?.hasError('maxlength')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2"> نام نمی‌تواند بیشتر از 20 کاراکتر
+                                باشد</p>
+                            }
+                            }
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">نام
+                            خانوادگی:<span class="text-red-500">*</span></label>
+                        <div class="focus-within:border-[#a35554] border  rounded-[5px] p-3 flex gap-2 items-center mt-1" [ngClass]="
+  form.get('family')?.invalid && form.get('family')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'
+">
+                            <i class="fa-solid fa-user text-[#8d8585] text-[13px] lg:text-[18px]"></i>
+                            <input type="text" placeholder="نام خانوادگی خود را وارد کنید"
+                                class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px] w-full"
+                                formControlName="family">
+                        </div>
+                        <div>
+                            @if (form.get('family')?.invalid && form.get('family')?.touched) {
+                            @if(form.get('family')?.hasError('required')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فیلد اجباری است</p>
+                            }
+                            @else if(form.get('family')?.hasError('minlength')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فامیل باید حداقل 3 کاراکتر باشد</p>
+                            }
+                            @else if(form.get('family')?.hasError('maxlength')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2"> فامیل نمی‌تواند بیشتر از 50 کاراکتر
+                                باشد</p>
+                            }
+                            }
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">سن:</label>
+                        <div class="focus-within:border-[#a35554] border border-[#a3a2a2] rounded-[5px] p-3 flex gap-2 items-center mt-1" [ngClass]="
+  form.get('age')?.invalid && form.get('age')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'">
+                            <i class="fa-solid fa-cake-candles text-[#8d8585] text-[13px] lg:text-[18px]"></i>
+                            <input type="text" placeholder="سن خود را وارد کنید"
+                                class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px] w-full"
+                                formControlName="age" (input)="onlyNumbers($event)">
+                        </div>
+                        <div>
+                            @if (form.get('age')?.invalid && form.get('age')?.touched) {
+                            @if(form.get('age')?.hasError('min')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">سن کمتر از ۱۴ سال نمی‌تواند باشد</p>
+                            }
+                            @else if(form.get('age')?.hasError('max')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2"> سن بیشتر از ۹۵ سال نمی‌تواند باشد
+                            </p>
+                            }
+
+                            }
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">شماره
+                            موبایل:<span class="text-red-500">*</span></label>
+                        <div class=" focus-within:border-[#a35554] border rounded-[5px] p-3 flex gap-2 items-center mt-1" [ngClass]="
+  form.get('phone')?.invalid && form.get('phone')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'
+">
+                            <i class="fa-solid fa-phone text-[13px] lg:text-[18px] text-[#8d8585]"></i>
+                            <input type="text" placeholder="شماره موبایل را وارد کنید"
+                                class="outline-none w-full placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px]"
+                                inputmode="numeric" (input)="onlyNumbers($event)" formControlName="phone">
+                        </div>
+                        <div>
+                            @if (form.get('phone')?.invalid && form.get('phone')?.touched) {
+                            @if(form.get('phone')?.hasError('required')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فیلد اجباری است</p>
+                            }
+                            @else if(form.get('phone')?.hasError('pattern')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فرمت شماره تلفن صحیح نمی باشد</p>
+                            }
+
+                            }
+                        </div>
+
+                    </div>
+                    <div class="w-full">
+                        <label
+                            class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">ایمیل:</label>
+                        <div class="focus-within:border-[#a35554] border  rounded-[5px] p-3 flex gap-2 items-center mt-1" [ngClass]="
+  form.get('email')?.invalid && form.get('email')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'
+">
+
+                            <i class="fa-solid fa-envelope text-[13px] lg:text-[18px] text-[#8d8585]"></i>
+                            <input type="email" placeholder="ایمیل خود را وارد کنید"
+                                class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px] w-full"
+                                formControlName="email">
+
+                        </div>
+                        <div>
+                            @if (form.get('email')?.invalid && form.get('email')?.touched) {
+                            @if(form.get('email')?.hasError('email')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فرمت ایمیل صحیح نمی باشد</p>
+                            }
+
+
+                            }
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">رمز
+                            عبور:<span class="text-red-500">*</span></label>
+                        <div class="focus-within:border-[#a35554] border justify-between border-[#a3a2a2] rounded-[5px] p-3 flex gap-2 items-center mt-1"
+                            [ngClass]="
+  form.get('password')?.invalid && form.get('password')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'">
+                            <div class="flex">
+                                <i class="fa-solid fa-lock text-[#8d8585] text-[13px] lg:text-[18px]"></i>
+                                <input [type]="showPassword?'password':'text'" formControlName="password"
+                                    placeholder="رمز  خود را وارد کنید"
+                                    class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px]">
+                            </div>
+                            <i class="fa-solid  text-[#8d8585] text-[13px] lg:text-[18px]" [ngClass]="showPassword?'fa-eye-slash':'fa-eye'"
+                                (click)="toggleItemPassword()"></i>
+                        </div>
+                        <div>
+                            @if (form.get('password')?.invalid && form.get('password')?.touched) {
+                            @if(form.get('password')?.hasError('required')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">فیلد اجباری است</p>
+                            }
+                            @else if(form.get('password')?.hasError('pattern')){
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">رمز عبور باید 8 رقم که شامل حروف و
+                                عدد و کاراکتر خاص
+                                باشد</p>
+                            }
+
+                            }
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">تکرار رمز
+                            عبور:<span class="text-red-500">*</span></label>
+                        <div class="focus-within:border-[#a35554] border justify-between border-[#a3a2a2] rounded-[5px] p-3 flex gap-2 items-center mt-1"
+                            [ngClass]="
+  form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched
+    ? 'border-red-500'
+    : 'border-[#a3a2a2]'">
+                            <div class="flex">
+                                <i class="fa-solid fa-lock text-[#8d8585] text-[13px] lg:text-[18px]"></i>
+                                <input [type]="showPasswordRepeat?'password':'text'" formControlName="confirmPassword"
+                                    placeholder="تکرار رمز عبور خود را وارد کنید"
+                                    class="outline-none placeholder:text-[#c1c2c2] text-[10px] lg:text-[12px]">
+                            </div>
+                            <i class="fa-solid  text-[#8d8585] focus-within:border-[#a35554] text-[13px] lg:text-[18px]" [ngClass]="showPasswordRepeat?'fa-eye-slash':'fa-eye'"
+                                (click)="toggleItemPasswordRepeat()"></i>
+                        </div>
+                        <div>
+                            @if (form.get('confirmPassword')?.touched) {
+
+                            @if (form.get('confirmPassword')?.hasError('required')) {
+
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">
+                                فیلد اجباری است
+                            </p>
+
+                            } @else if (form.hasError('passwordMismatch')) {
+
+                            <p class="text-red-600 text-[10px] lg:text-[12px] mt-2">
+                                رمز عبور با تکرار رمز عبور مطابقت ندارد
+                            </p>
+
+                            }
+
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <button
+                    class="border text-[12px] lg:text-[14px] p-2 rounded-[5px] mt-4 w-full lg:w-[20%] cursor-pointer bg-[#a35554] text-[#fefefe] transform hover:scale-[1.01] outline-none">
+                    ارسال اطلاعات</button>
+            </form>
+            <hr class="text-[#dad8da] h-2.5 w-[95%]  flex justify-center mt-5">
+            <div class="w-[95%] flex flex-col gap-2 lg:gap-1 p-3">
+                <!-- <h3 class="text-[#a35554] font-bold cursor-pointer text-[12px] lg:text-[14px]">فراموشی رمز عبور؟</h3> -->
+                <div class="flex gap-1 ">
+                    <p class="text-[#878687] text-[12px] lg:text-[14px]">قبلا ثبت نام کردین؟</p>
+                    <p class="text-[#a35554] font-bold cursor-pointer text-[12px] lg:text-[14px]" (click)="login()">ورود
+                        به حساب کاربری</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

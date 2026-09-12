@@ -8,5 +8,40 @@
         url('../public/font/Vazir-Medium-FD-WOL.woff') format('woff');
 }
 body,h2,p,span{
-    font-family: 'vazir';
+    font-family: 'vazir', Arial, sans-serif;
+
+}
+.p-toast {
+  width: 280px !important;
+}
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .p-toast {
+    width: calc(100vw - 50px) !important;
+    max-width: 280px !important;
+  }
+
+  .p-toast-message {
+    padding: 6px 10px !important;
+  }
+
+  .p-toast-summary {
+    font-size: 12px !important;
+  }
+
+  .p-toast-detail {
+    font-size: 11px !important;
+  }
+  
+
 }

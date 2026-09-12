@@ -1,0 +1,66 @@
+<p-toast position="top-left"></p-toast>
+<div class="max-w-dvw  bg-[#fcfbfb]/50 min-h-dvh  py-5  flex justify-center relative">
+    <img src="img/login/img_login.webp" alt="header_img"
+        class="w-full h-full block absolute object-cover top-0 left-0 z-[10]">
+    <div class="block absolute inset-0
+            bg-[rgba(0,0,0,0.2)]
+             z-10"></div>
+    <div class="z-100  w-full md:w-[50%] flex flex-col items-center p-5 mt-8 lg:mt-0 ">
+        <div class=" bg-white/75 backdrop-blur-lg border border-white/40
+           shadow-[0_20px_70px_rgba(60,30,35,0.25)]  w-[95%] p-3  pt-5 lg:p-10 rounded-[5px]  ">
+            <!-- /////////////////////////////////////// -->
+            <div class=" w-full flex flex-col items-center gap-2 relative">
+                <h2 class="text-[14px] lg:text-xl text-[#1e1e1d]">ورود به پنل مدیریت</h2>
+                <div class="flex items-center justify-center gap-1 w-[50%]">
+                    <div class="h-0.5 w-[20%] lg:w-[10%] bg-[#a35554] rounded-[5px]"></div>
+                    <div class=" w-2 h-2 bg-[#a35554] rounded-[50%]"></div>
+                    <div class="h-0.5 w-[20%] lg:w-[10%] bg-[#a35554] rounded-[5px]"></div>
+                </div>
+                <p class="text-[#6d6d6d]  text-[10px] lg:text-[12px] ">سامانه مدیریت سالن زیبایی زنانه </p>
+            </div>
+            <!-- ////////////////////////////////////////////////////////////// -->
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full p-6 flex flex-col items-center  gap-3">
+                <div class="w-full">
+                    <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">شماره
+                        موبایل</label>
+                    <div
+                        class="focus-within:border-[#a35554] border-[#a3a2a2]  border rounded-[5px] p-3 lg:p-4 flex gap-2 items-center mt-1">
+                        <input type="text" placeholder="شماره موبایل را وارد کنید"
+                            class="outline-none w-full  placeholder:text-[#7c7c7c] text-[10px] lg:text-[12px]"
+                            inputmode="numeric" (input)="onlyNumbers($event)" formControlName="phone">
+
+                        <i class="fa-solid fa-phone text-[13px]  lg:text-[18px]  text-[#a3a2a2]"></i>
+                    </div>
+
+                </div>
+                <div class="w-full">
+                    <label class="text-[#070808] text-[12px] lg:text-[16px] flex items-center gap-0.5">رمز عبور
+                    </label>
+                    <div class="focus-within:border-[#a35554] border border-[#a3a2a2] justify-between   rounded-[5px] p-3 lg:p-4 flex gap-2 items-center mt-1">
+                        <div class="flex w-full">
+                            <i class="fa-solid fa-lock text-[#a3a2a2] text-[13px] lg:text-[18px]"></i>
+                            <input [type]="showPassword?'password':'text'" placeholder="رمز  خود را وارد کنید"
+                                class="outline-none w-full placeholder:text-[#7c7c7c] text-[10px] lg:text-[12px]"
+                                formControlName="password">
+                        </div>
+                        <i class="fa-solid text-[13px] lg:text-[18px]   text-[#a3a2a2]"
+                            [ngClass]="showPassword?'fa-eye-slash':'fa-eye'" (click)="toggleItemPassword()"></i>
+                    </div>
+                </div>
+                <button
+                    class=" p-2 text-[12px] lg:text-[14px] rounded-[5px] mt-4 w-full lg:w-[20%] cursor-pointer bg-[#a35554] text-[#fefefe] transform hover:scale-[1.01] outline-none disabled:cursor-no-drop disabled:bg-[#a35554]/80"
+                    [disabled]="form.invalid">
+                    ورود</button>
+            </form>
+            <!-- ////////////////////////////// -->
+            <!-- <hr class=" bg-[#bebbbe] text-[#afaaaf]   h-0.35  w-[95%]   flex justify-center mt-2">
+            <div class="w-[95%] flex flex-col gap-2 lg:gap-1 p-3">
+                <h3 class="text-[#a35554] font-bold cursor-pointer text-[12px] lg:text-[14px]"
+                    (click)="forgotPassword()"></h3>
+
+            </div> -->
+        </div>
+
+
+    </div>
+</div>

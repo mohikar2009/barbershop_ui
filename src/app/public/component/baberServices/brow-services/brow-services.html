@@ -1,0 +1,176 @@
+<div class="min-h-[100dvh] bg-[#faf7f6]">
+    <div class="w-full px-4 py-5 h-full">
+
+        <!-- Header Image -->
+        <div class="mx-auto w-full h-full max-w-[600px] md:max-w-[1200px]">
+
+            <div
+                class="relative h-[210px] overflow-hidden rounded-[28px] shadow-[0_10px_30px_rgba(120,80,80,0.12)] md:hidden">
+                <img src="img/servicebaber/ebrow/ebrow.webp" alt="ebrow_img"
+                    class="h-full w-full object-cover object-top scale-x-[-1]">
+
+                <!-- Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+                <!-- Title روی تصویر -->
+                <div class="absolute bottom-5 right-5 text-white">
+                    <h1 class="text-[23px] font-bold drop-shadow-md">
+                        خدمات ابرو
+                    </h1>
+                    <p class="mt-1 text-[13px] text-white/80">
+                        زیبایی بیشتر، چهره‌ای جذاب‌ تر
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Section title -->
+            <div class="mt-7 mb-4 md:hidden">
+                <h2 class="text-[20px] font-bold text-[#302b2b]">
+                    انتخاب خدمت
+                </h2>
+
+                <p class="mt-1 text-[13px] text-[#a39c9a]">
+                    خدمت مورد نظر خود را انتخاب کنید
+                </p>
+            </div>
+            <div class="hidden md:flex flex-col items-center gap-1.75">
+                <h3 class="text-[#e0b69d] text-bold  text-[14px] lg:text-[18px]">انتخاب بهترین خدمات</h3>
+                <h2 class="text-[#272523] text-[18px] lg:text-[24px]">خدمات ابرو</h2>
+                <p class="text-[#aeaba9] text-[12px] lg:text-[14px] text-center">انواع خدمات ابرو تخصیصی با بروزترین مد
+                    روز دنیا</p>
+            </div>
+
+            <div class="w-full grid grid-cols-1   md:grid-cols-[35%_65%] lg:grid-cols-[25%_75%] mt-5  ">
+                <app-sid-bar></app-sid-bar>
+                <div class="flex flex-col gap-2 md:grid md:grid-cols-2 lg:grid-cols-3 md:w-full">
+                    @for (item of services; track $index) {
+                    <div class="group relative grid grid-cols-[80px_1fr_30px] md:flex md:flex-col items-center md:items-start gap-3
+                       rounded-2xl border border-[#eadada]
+                       bg-white p-3
+                       shadow-[0_5px_20px_rgba(120,80,80,0.07)]
+                       transition-all duration-300
+                       hover:-translate-y-1
+                       hover:border-[#c99c9c]
+                       
+                       hover:shadow-[0_10px_30px_rgba(120,80,80,0.12)]">
+
+
+                        <div class="h-[80px] w-[80px] md:w-[100%] md:h-[180px] overflow-hidden rounded-xl">
+                            <img [src]='item.image' [alt]="item.alt"
+                                class="h-full w-full object-cover transition-transform duration-300  "
+                                [class.scale-x-[-1]]="item.flip">
+                        </div>
+
+
+
+                        <div class="min-w-0">
+
+                            <h3 class="text-[16px] font-bold text-[#332d2d]">
+                                {{item.title}}
+                            </h3>
+
+                            <div class="mt-2 flex items-center gap-1.5 text-[12px] text-[#918989]">
+                                <i class="fa-regular fa-clock text-[11px] text-[#b88989]"></i>
+
+                                <span>مدت زمان:</span>
+
+                                <span class="font-medium text-[#5e5555]">
+                                    {{item.duration}}
+                                </span>
+                            </div>
+
+                            <div class="mt-2 flex items-center">
+                                <i class="fa-solid fa-money-bill-wave text-[11px] text-[#b88989]"></i>
+                                <span class="text-[12px] text-[#918989] md:block">هزینه:</span>
+                                <span class="text-[14px] font-bold text-[#b27777]">
+                                    {{item.price|number}}
+                                </span>
+
+                                <span class="mr-1 text-[11px] text-[#8e8585]">
+                                    تومان
+                                </span>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class=" md:hidden flex h-8 w-8 items-center justify-center rounded-full
+                           bg-[#faf1f1] text-[#b88989]
+                           transition-all duration-300
+                           group-hover:bg-[#b88989]
+                           group-hover:text-white">
+                            <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                        </div>
+                        <div class="md:flex justify-end w-full hidden ">
+                            <button
+                                class=" bg-[#b88989] text-[#faf1f1] w-full p-1 rounded-[5px]  border border-[#b88989] cursor-pointer hover:bg-[#faf1f1] hover:text-[#b88989]">رزو
+                                نوبت</button>
+                        </div>
+
+                    </div>
+                    }
+
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="flex w-full gap-2  overflow-x-auto lg:grid lg:grid-cols-5 lg:overflow-visible my-3">
+
+                <div class="shrink-0 w-[120px] md:w-[220px] lg:w-full h-[150px] overflow-hidden rounded-lg">
+                    <img src="img/servicebaber/ebrow/img_eb_4.webp" class="h-full w-full object-cover">
+                </div>
+
+                <div class="shrink-0 w-[120px] md:w-[220px] lg:w-full h-[150px] overflow-hidden rounded-lg">
+                    <img src="img/servicebaber/ebrow/img_eb_5.webp" class="h-full w-full object-cover">
+                </div>
+
+                <div class="shrink-0 w-[120px] md:w-[220px] lg:w-full h-[150px] overflow-hidden rounded-lg">
+                    <img src="img/servicebaber/ebrow/img_eb_6.webp" class="h-full w-full object-cover">
+                </div>
+
+                <div class="shrink-0 w-[120px] md:w-[220px] lg:w-full h-[150px] overflow-hidden rounded-lg">
+                    <img src="img/servicebaber/ebrow/img_eb_7.webp" class="h-full w-full object-cover">
+                </div>
+
+                <div class="shrink-0 w-[120px] md:w-[220px] lg:w-full h-[150px] overflow-hidden rounded-lg">
+                    <img src="img/servicebaber/ebrow/img_eb_8.webp" class="h-full w-full object-cover">
+                </div>
+
+            </div>
+
+            <div
+                class="bg-[#b28884] mt-2 lg:h-37.5 w-full flex overflow-hidden items-center justify-between  rounded-[5px] p-3 lg:pe-3 lg:p-0 ">
+                <div class="lg:w-[30%] hidden lg:flex justify-center">
+                    <img src="img/babershop_two.png" alt="" class="w-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1 lg:gap-2">
+                    <h3 class="text-[#fefefe] text-[12px] lg:text-[25px] font-bold">رزو نوبت برای خدمات ابرو</h3>
+                    <p class="text-[#fefefe] text-[10px] lg:text-[12px]">همین حالا نوبت را رزرو کنید<span
+                            class="hidden md:inline">و
+                            تجربه ای
+                            متفاوت از زیبایی را احساس کنید</span>
+                </div>
+                <div class="flex gap-2 ">
+                    <button
+                        class="text-[#fefefe] border border-[#fefefe]/50 hidden md:block rounded-[5px] p-3 hover:bg-[#fefefe] hover:text-[#b28884] cursor-pointer"><i
+                            class="fa-solid fa-phone"></i>0913252525</button>
+                    <button
+                        class="hover:bg-[#fefefe] hover:text-[#b28884] hidden md:block text-[#fefefe] border border-[#fefefe]/50 rounded-[5px] p-3 cursor-pointer"><i
+                            class="fa-solid fa-calendar-days "></i>رزرو نوبت</button>
+
+
+                </div>
+                <div class="md:hidden"> <i class="fa-solid fa-calendar-days text-[#fefefe] text-[25px]"></i></div>
+                <div class="md:hidden bg-[#bb746e] p-1.5 rounded-[50%]"> <i
+                        class="fa-solid fa-chevron-left text-[#fefefe] text-[25px]"></i></div>
+
+            </div>
+        </div>
+    </div>
+</div>

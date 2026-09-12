@@ -1,8 +1,9 @@
 import { Component , ElementRef, HostListener, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule,DecimalPipe } from '@angular/common';
+
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  imports: [CommonModule, DecimalPipe],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
